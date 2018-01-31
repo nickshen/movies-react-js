@@ -4,6 +4,7 @@ import React, {
 import { StyleSheet, css } from 'aphrodite/no-important';
 import { Link }       from 'react-router-dom';
 import { DefaultStyles } from '../helpers/styles';
+import MovieItem from './MovieItem';
 
 const styles = StyleSheet.create({
   container: {
@@ -32,20 +33,12 @@ class Home extends PureComponent
             Popular Titles
           </Link>
         </div>
-        <div id="#content" className={css(DefaultStyles.section, styles.mainContent)}>
+        <div id="#content" className={css(DefaultStyles.section, DefaultStyles.mainContent)}>
           <Link to={'/series'}>
-            <div className={css(DefaultStyles.movieBox)}>
-              <div className={css(DefaultStyles.innerTitle)}>
-                Series
-              </div>
-            </div>
+            <MovieItem innerTitle={'Series'} bottomTitle={'Series'} />
           </Link>
-          <Link to={'/series'}>
-            <div className={css(DefaultStyles.movieBox)}>
-              <div className={css(DefaultStyles.innerTitle)}>
-                Movies
-              </div>
-            </div>
+          <Link to={'/movies'}>
+            <MovieItem innerTitle={'Movies'} bottomTitle={'Movies'} />
           </Link>
         </div>
       </div>
