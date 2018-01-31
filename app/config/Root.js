@@ -4,12 +4,25 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import Footer from '../components/Footer';
+import Home from '../components/Home';
 import NavigationBar from '../components/NavigationBar';
+import { StyleSheet, css } from 'aphrodite/no-important';
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
+const styles = StyleSheet.create({
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  },
+  mainContent: {
+    display: 'flex',
+    flex: '1',
+  },
+});
+
+const HomeRoute = () => (
+  <Home />
 );
 
 const About = () => (
@@ -54,12 +67,15 @@ const Topics = ({ match }) => (
 
 const Root = () => (
   <Router>
-    <div>
+    <div className={css(styles.wrapper)}>
       <NavigationBar />
       <hr/>
-      <Route exact path="/" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/topics" component={Topics}/>
+      <div className={css(styles.mainContent)}>
+        <Route exact path="/" component={HomeRoute}/>
+        <Route path="/about" component={About}/>
+        <Route path="/topics" component={Topics}/>
+      </div>
+      <Footer />
     </div>
   </Router>
 );
