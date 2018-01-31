@@ -35,10 +35,16 @@ class Home extends PureComponent
         </div>
         <div id="#content" className={css(DefaultStyles.section, DefaultStyles.mainContent)}>
           <Link to={'/series'}>
-            <MovieItem innerTitle={'Series'} bottomTitle={'Series'} />
+            <MovieItem
+              innerTitle={'Series'}
+              bottomTitle={'Series'}
+            />
           </Link>
           <Link to={'/movies'}>
-            <MovieItem innerTitle={'Movies'} bottomTitle={'Movies'} />
+            <MovieItem
+              innerTitle={'Movies'}
+              bottomTitle={'Movies'}
+            />
           </Link>
         </div>
       </div>

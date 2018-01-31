@@ -8,13 +8,14 @@ import Footer from '../components/Footer';
 import Home from '../components/Home';
 import NavigationBar from '../components/NavigationBar';
 import { StyleSheet, css } from 'aphrodite/no-important';
-import Series from '../components/Series';
+import FilteredTVContent from '../components/FilteredTVContent';
 
 const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
+    minWidth: '480px',
   },
   mainContent: {
     display: 'flex',
@@ -27,13 +28,11 @@ const HomeRoute = () => (
 );
 
 const SeriesRoute = () => (
-  <Series />
+  <FilteredTVContent programType={'Series'} />
 );
 
 const MoviesRoute = () => (
-  <div>
-    <h3>{match.params.topicId}</h3>
-  </div>
+  <FilteredTVContent programType={'Movie'} />
 );
 
 const Root = () => (

@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
   },
   brand: {
     cursor: 'pointer',
+    display: 'inline',
     fontSize: '22px',
   },
   container: {
@@ -33,13 +34,17 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginLeft: '24px',
   },
-  tabLink : {
+  navLink : {
     color: 'white',
     textDecoration: 'none',
   },
   specialLink: {
     backgroundColor: '#0c2461',
-    padding: '4px 8px',
+    padding: '8px 16px',
+    transition: '0.1s all',
+    ':hover': {
+      backgroundColor: '#ff3f34',
+    },
   },
 });
 
@@ -49,21 +54,23 @@ class NavigationBar extends PureComponent
   {
     return (
       <nav className={css(styles.container)}>
-        <div className={css(styles.brand)}>
-          Nick
-        </div>
-        <div className={css(styles.brand, styles.bold)}>
-          Flix
-        </div>
+        <Link to="/" className={css(styles.navLink)}>
+          <div className={css(styles.brand)}>
+            Nick
+          </div>
+          <div className={css(styles.brand, styles.bold)}>
+            Flix
+          </div>
+        </Link>
         <div className={css(DefaultStyles.section)}>
           <ul className={css(styles.tabs)}>
             <li className={css(styles.tabItem)}>
-              <Link to="/" className={css(styles.tabLink)}>
+              <Link to="/" className={css(styles.navLink)}>
                 Log in
               </Link>
             </li>
             <li className={css(styles.tabItem)}>
-              <Link to="/" className={css(styles.tabLink, styles.specialLink)}>
+              <Link to="/" className={css(styles.navLink, styles.specialLink)}>
                 Start your free trial
               </Link>
             </li>
