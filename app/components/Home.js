@@ -3,15 +3,12 @@ import React, {
 }                          from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import { Link }       from 'react-router-dom';
+import { DefaultStyles } from '../helpers/styles';
 
 const styles = StyleSheet.create({
   container: {
     display: 'flex',
     flexDirection: 'column',
-    padding: '0px 12px',
-    flex: '1',
-  },
-  section: {
     flex: '1',
   },
   tabs: {
@@ -30,11 +27,26 @@ class Home extends PureComponent
   {
     return (
       <div className={css(styles.container)}>
-        <div className={styles.section}>
-          Popular Titles
+        <div className={css(DefaultStyles.titleRow)}>
+          <Link to={'/'} className={css(DefaultStyles.link)}>
+            Popular Titles
+          </Link>
         </div>
-        <div id="#content" className={styles.section}>
-
+        <div id="#content" className={css(DefaultStyles.section, styles.mainContent)}>
+          <Link to={'/series'}>
+            <div className={css(DefaultStyles.movieBox)}>
+              <div className={css(DefaultStyles.innerTitle)}>
+                Series
+              </div>
+            </div>
+          </Link>
+          <Link to={'/series'}>
+            <div className={css(DefaultStyles.movieBox)}>
+              <div className={css(DefaultStyles.innerTitle)}>
+                Movies
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     );

@@ -6,6 +6,13 @@ import { Link } from 'react-router-dom';
 import { DefaultStyles } from '../helpers/styles';
 
 const styles = StyleSheet.create({
+  bold: {
+    fontWeight: '700',
+  },
+  brand: {
+    cursor: 'pointer',
+    fontSize: '22px',
+  },
   container: {
     alignItems: 'center',
     backgroundColor: '#0652DD',
@@ -28,6 +35,11 @@ const styles = StyleSheet.create({
   },
   tabLink : {
     color: 'white',
+    textDecoration: 'none',
+  },
+  specialLink: {
+    backgroundColor: '#0c2461',
+    padding: '4px 8px',
   },
 });
 
@@ -37,24 +49,25 @@ class NavigationBar extends PureComponent
   {
     return (
       <nav className={css(styles.container)}>
-        <div className={css(DefaultStyles.content)}>
-          <div className={css(styles.brand)}>
-            Nickflix
-          </div>
-          <div className={css(DefaultStyles.section)}>
-            <ul className={css(styles.tabs)}>
-              <li className={css(styles.tabItem)}>
-                <Link to="/" className={css(styles.tabLink)}>
-                  Login
-                </Link>
-              </li>
-              <li className={css(styles.tabItem)}>
-                <Link to="/about" className={css(styles.tabLink)}>
-                  Start your free trial
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className={css(styles.brand)}>
+          Nick
+        </div>
+        <div className={css(styles.brand, styles.bold)}>
+          Flix
+        </div>
+        <div className={css(DefaultStyles.section)}>
+          <ul className={css(styles.tabs)}>
+            <li className={css(styles.tabItem)}>
+              <Link to="/" className={css(styles.tabLink)}>
+                Log in
+              </Link>
+            </li>
+            <li className={css(styles.tabItem)}>
+              <Link to="/" className={css(styles.tabLink, styles.specialLink)}>
+                Start your free trial
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
     );
