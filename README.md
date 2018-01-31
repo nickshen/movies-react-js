@@ -23,3 +23,8 @@ I would also make the Routing more robust, as right now it is only client side a
 
 I would have definitely used a more robust state system such as **Redux** (https://redux.js.org/) if the task were more complex/required more state management and corresponding events.
 I would also definitely do a better job with routing and BrowserHistory.
+
+**Screens**
+![Home Screenshot](https://github.com/nickshen/frontend/blob/master/docs/home.png)
+![Series Screenshot](https://github.com/nickshen/frontend/blob/master/docs/series.png)
+![Movies Screenshot](https://github.com/nickshen/frontend/blob/master/docs/movies.png)
