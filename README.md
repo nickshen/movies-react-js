@@ -25,6 +25,6 @@ I would have definitely used a more robust state system such as **Redux** (https
 I would also definitely do a better job with routing and BrowserHistory.
 
 **Screens**
-![Home Screenshot](https://github.com/nickshen/frontend/blob/master/docs/home.png)
 ![Series Screenshot](https://github.com/nickshen/frontend/blob/master/docs/series.png)
 ![Movies Screenshot](https://github.com/nickshen/frontend/blob/master/docs/movies.png)
+![Home Screenshot](https://github.com/nickshen/frontend/blob/master/docs/home.png)
